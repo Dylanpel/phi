@@ -16,6 +16,7 @@ INSERT INTO `users` (`id`, `login`, `password`, `email`, `role`) VALUES
 CREATE TABLE Articles(
   id INT AUTO_INCREMENT,
   title VARCHAR(255) NOT NULL,
+  date DATE NOT NULL,
   content TEXT NOT NULL,
   image_url VARCHAR(1024),
   id_user INT NOT NULL,
