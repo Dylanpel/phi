@@ -37,7 +37,10 @@ class PageController extends Controller
    */
   public function createForm(): void
   {
-    $this->render('pages/create', []);
+    //obligation de la connexion en tant qu'admin
+    $this->requireAdmin();
+
+    $this->render('admin/page/form', []);
   }
   
   /**
