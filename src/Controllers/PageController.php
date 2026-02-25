@@ -40,7 +40,38 @@ class PageController extends Controller
     //obligation de la connexion en tant qu'admin
     $this->requireAdmin();
 
-    $this->render('admin/page/form', []);
+    $this->render('admin/page/form', [
+      'action' => '/admin/page/form'
+    ]);
+  }
+
+  /**
+   * Traitement du formulaire de création d'artiste
+   * @return void Pas de valeur de retour
+   */
+  public function create(): void
+  {
+    //obligation de la connexion en tant qu'admin
+    $this->requireAdmin();
+
+    //récupération des infos envoyées par le formulaire
+    $title = $_POST['title'] ?? '';
+    $content = $_POST['content'] ?? '';
+    $imageUrl = $_POST['imageUrl'] ?? '';
+
+    $data = [
+      'title' => $title,
+      'content' => $content,
+    ];
+    
+    if(!empty($imageUrl)) {
+      $data['imageUrl'] = $imageUrl;
+    }
+    
+    $this->pageManager->create($data);
+
+    //redirection vers la home
+    Router::redirect('/');
   }
   
   /**

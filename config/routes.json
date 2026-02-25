@@ -22,6 +22,11 @@
         "action": "createForm"
       },
       {
+        "method": "POST",
+        "path": "/admin/page/form",
+        "action": "create"
+      },
+      {
         "method": "GET",
         "path": "/qui-sommes-nous",
         "action": "quiSommesNous"
