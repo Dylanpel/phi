@@ -1,0 +1,48 @@
+{
+  "routes": {
+    "PagesController": [
+      {
+        "method": "GET",
+        "path": "/",
+        "action": "home"
+      },
+      {
+        "method": "GET",
+        "path": "/forbidden",
+        "action": "forbidden"
+      }
+    ],
+    "AuthController": [
+      {
+        "method": "GET",
+        "path": "/init",
+        "action": "usersInit"
+      },
+      {
+        "method": "GET",
+        "path": "/login",
+        "action": "loginForm"
+      },
+      {
+        "method": "POST",
+        "path": "/login",
+        "action": "login"
+      },
+      {
+        "method": "GET",
+        "path": "/register",
+        "action": "registerForm"
+      },
+      {
+        "method": "POST",
+        "path": "/register",
+        "action": "register"
+      },
+      {
+        "method": "GET",
+        "path": "/logout",
+        "action": "logout"
+      }
+    ]
+  }
+}

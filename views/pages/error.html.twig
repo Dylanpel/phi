@@ -1,0 +1,14 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Erreur{% endblock %}
+
+{% block content %}
+<div class="container">
+  {% if error is defined %}
+    <div class="alert alert-danger">{{ error }}</div>
+  {% else %}
+    <h1>Page d'erreur</h1>
+    <p>Ceci est une erreur.</p>
+  {% endif %}
+</div>
+{% endblock %}

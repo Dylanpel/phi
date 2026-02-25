@@ -1,0 +1,57 @@
+{# views/auth/login.html.twig #}
+{% extends 'layout.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block content %}
+  
+  {% if error is defined %}
+    <div class="alert alert-danger">{{ error }}</div>
+  {% endif %}
+
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-5">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h3 class="text-center mb-4">Connexion</h3>
+
+          <form method="POST" action="login">
+            <div class="mb-3">
+              <label for="login" class="form-label">Nom d'utilisateur</label>
+              <input type="text" class="form-control" id="login" name="login" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="password" class="form-label">Mot de passe</label>
+              <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Se connecter</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h4 class="text-center mb-1">Accès utilisateurs</h4>
+
+          <h5 class="text-center mb-2">Administrateur</h5>
+          <p>
+            <strong>Email&nbsp;:</strong> admin@grand-angle.local<br>
+            <strong>Login&nbsp;:</strong> administrator<br>
+            <strong>Mot de passe&nbsp;:</strong> adminpassword
+          </p>
+
+          <h5 class="text-center mb-2">Collaborateur</h5>
+          <p>
+            <strong>Email&nbsp;:</strong> editor@grand-angle.local<br>
+            <strong>Login&nbsp;:</strong> editor<br>
+            <strong>Mot de passe&nbsp;:</strong> editorpassword
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

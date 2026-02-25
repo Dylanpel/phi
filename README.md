@@ -28,7 +28,7 @@ Ajouter à la fin (remplacer le chemin par le chemin sur votre poste, la premiè
 </VirtualHost>
 
 <VirtualHost *:80>
-    ServerName admin.grand-angle.local
+    ServerName phi.local
     DocumentRoot "C:/xampp/htdocs/phi/public"
 
     <Directory "C:/xampp/htdocs/phi/public">
