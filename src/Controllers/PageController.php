@@ -55,9 +55,9 @@ class PageController extends Controller
     $this->requireAdmin();
 
     //récupération des infos envoyées par le formulaire
-    $title = $_POST['title'] ?? '';
-    $content = $_POST['content'] ?? '';
-    $imageUrl = $_POST['imageUrl'] ?? '';
+    $title = trim($_POST['title'] ?? '');
+    $content = trim($_POST['content'] ?? '');
+    $imageUrl = trim($_POST['image_url'] ?? '');
 
     $data = [
       'title' => $title,
