@@ -18,6 +18,11 @@
       },
       {
         "method": "GET",
+        "path": "/pages/new",
+        "action": "createForm"
+      },
+      {
+        "method": "GET",
         "path": "/qui-sommes-nous",
         "action": "quiSommesNous"
       },

@@ -32,6 +32,15 @@ class PageController extends Controller
   }
 
   /**
+   * Affiche la vue du formulaire de création de page
+   * @return void Pas de valeur de retour
+   */
+  public function createForm(): void
+  {
+    $this->render('pages/create', []);
+  }
+  
+  /**
    * Affiche la vue de la page d'erreur
    * @return void Pas de valeur de retour
    */
