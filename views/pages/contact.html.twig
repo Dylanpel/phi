@@ -1,0 +1,180 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+      <div class="row g-4">
+
+        <!-- LEFT: infos -->
+        <div class="col-lg-4 d-flex flex-column gap-4">
+
+          <div class="info-card d-flex gap-3 align-items-start">
+            <div class="icon"><i class="bi bi-geo-alt-fill"></i></div>
+            <div>
+              <h6>Adresse</h6>
+              <p class="mb-0 small">534, Avenue Jean-Giraudoux<br>18200 SAINT-AMAND-MONTROND</p>
+            </div>
+          </div>
+
+          <div class="info-card d-flex gap-3 align-items-start">
+            <div class="icon"><i class="bi bi-telephone-fill"></i></div>
+            <div>
+              <h6>Téléphone</h6>
+              <a href="tel:0248607268" class="text-decoration-none fw-bold" style="color: var(--phi-green);">02 48 60 72 68</a>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="d-flex gap-3 align-items-start mb-3">
+              <div class="icon"><i class="bi bi-clock-fill"></i></div>
+              <h6 class="mt-2">Horaires d'ouverture</h6>
+            </div>
+            <table class="hours-table w-100">
+              <tr>
+                <td>Lun, Mar, Jeu</td>
+                <td>9h–12h &amp; 13h–16h</td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <span class="badge bg-success-subtle text-success-emphasis mt-1 small">Accueil physique &amp; téléphonique</span>
+                </td>
+              </tr>
+              <tr class="mt-2">
+                <td>Vendredi</td>
+                <td>9h–12h &amp; 13h–16h</td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <span class="badge bg-warning-subtle text-warning-emphasis small">Mail uniquement — pas d'accueil physique</span>
+                </td>
+              </tr>
+            </table>
+          </div>
+
+        </div>
+
+        <!-- RIGHT: FORM -->
+        <div class="col-lg-8">
+          <div class="form-card">
+            <h2 class="mb-1">Écrivez-nous</h2>
+            <p class="text-muted small mb-4">Tous les champs marqués d'un <span class="text-danger">*</span> sont obligatoires.</p>
+
+            <form novalidate>
+              <!-- Civilité -->
+              <div class="mb-3">
+                <label class="form-label">Civilité <span class="text-danger">*</span></label>
+                <select class="form-select" required>
+                  <option value="" disabled selected>Sélectionnez</option>
+                  <option>M.</option>
+                  <option>Mme</option>
+                  <option>Autre / Non précisé</option>
+                </select>
+              </div>
+
+              <!-- Prénom / Nom -->
+              <div class="row g-3 mb-3">
+                <div class="col-sm-6">
+                  <label class="form-label">Prénom <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" placeholder="Votre prénom" required />
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label">Nom <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" placeholder="Votre nom" required />
+                </div>
+              </div>
+
+              <!-- Adresse -->
+              <div class="mb-3">
+                <label class="form-label">Adresse <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" placeholder="Numéro et rue" required />
+              </div>
+
+              <!-- CP / Ville -->
+              <div class="row g-3 mb-3">
+                <div class="col-sm-4">
+                  <label class="form-label">Code postal <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" placeholder="75000" required />
+                </div>
+                <div class="col-sm-8">
+                  <label class="form-label">Ville <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" placeholder="Votre ville" required />
+                </div>
+              </div>
+
+              <!-- Email / Tél -->
+              <div class="row g-3 mb-3">
+                <div class="col-sm-6">
+                  <label class="form-label">E-mail <span class="text-danger">*</span></label>
+                  <input type="email" class="form-control" placeholder="vous@exemple.fr" required />
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label">Téléphone <span class="text-danger">*</span></label>
+                  <input type="tel" class="form-control" placeholder="06 00 00 00 00" required />
+                </div>
+              </div>
+
+              <!-- Profession -->
+              <div class="mb-3">
+                <label class="form-label">Pour mieux vous connaître, vous êtes ? <span class="text-danger">*</span></label>
+                <div class="profession-grid">
+                  <label class="profession-item">
+                    <input type="radio" name="profession" value="pharmacien" /><span>Pharmacien·ne</span>
+                  </label>
+                  <label class="profession-item">
+                    <input type="radio" name="profession" value="medecin" /><span>Médecin</span>
+                  </label>
+                  <label class="profession-item">
+                    <input type="radio" name="profession" value="professionnel" /><span>Professionnel de santé</span>
+                  </label>
+                  <label class="profession-item">
+                    <input type="radio" name="profession" value="association" /><span>Membre d'une association</span>
+                  </label>
+                  <label class="profession-item">
+                    <input type="radio" name="profession" value="actif" /><span>Particulier en activité</span>
+                  </label>
+                  <label class="profession-item">
+                    <input type="radio" name="profession" value="retraite" /><span>Particulier en retraite</span>
+                  </label>
+                  <label class="profession-item">
+                    <input type="radio" name="profession" value="entreprise" /><span>Entreprise</span>
+                  </label>
+                  <label class="profession-item">
+                    <input type="radio" name="profession" value="ong" /><span>ONG ou association</span>
+                  </label>
+                  <label class="profession-item">
+                    <input type="radio" name="profession" value="journaliste" /><span>Journaliste</span>
+                  </label>
+                  <label class="profession-item">
+                    <input type="radio" name="profession" value="autre" /><span>Autre</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Message -->
+              <div class="mb-3">
+                <label class="form-label">Votre demande <span class="text-danger">*</span></label>
+                <textarea class="form-control" rows="5" placeholder="Décrivez votre demande ici…" required></textarea>
+              </div>
+
+              <!-- Upload -->
+              <div class="mb-4">
+                <label class="form-label">Joindre une pièce jointe <span class="text-muted fw-normal">(PDF uniquement)</span></label>
+                <label class="upload-zone d-block" for="fileUpload">
+                  <i class="bi bi-cloud-arrow-up fs-2 d-block mb-1"></i>
+                  <span class="small">Cliquez ou glissez votre fichier PDF ici</span>
+                  <input type="file" id="fileUpload" accept=".pdf" class="d-none" />
+                </label>
+              </div>
+
+              <!-- Submit -->
+              <div class="d-flex justify-content-end">
+                <button type="submit" class="btn btn-submit">
+                  <i class="bi bi-send-fill me-2"></i>Envoyer
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+{% endblock %}

@@ -10,6 +10,11 @@
         "method": "GET",
         "path": "/forbidden",
         "action": "forbidden"
+      },
+      {
+        "method": "GET",
+        "path": "/contact",
+        "action": "contact"
       }
     ],
     "AuthController": [
