@@ -12,5 +12,8 @@
       "name": "ISFAC Co Creative Challenge - Brown Team"
     }
   ],
-  "require": {}
+  "require": {
+    "php": ">=8.1",
+    "twig/twig": "^3.23"
+  }
 }
