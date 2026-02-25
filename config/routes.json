@@ -8,11 +8,6 @@
       },
       {
         "method": "GET",
-        "path": "/dashboard",
-        "action": "dashboard"
-      },
-      {
-        "method": "GET",
         "path": "/forbidden",
         "action": "forbidden"
       }
