@@ -1,0 +1,16 @@
+{
+  "name": "ccc/phi",
+  "description": "Site internet de l'association Pharmacie Humanitaire Internationale",
+  "type": "project",
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "ISFAC Co Creative Challenge - Brown Team"
+    }
+  ],
+  "require": {}
+}
