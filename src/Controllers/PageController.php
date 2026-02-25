@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Core\Abstract\Controller;
 
-class PagesController extends Controller
+class PageController extends Controller
 {
   /**
    * Affiche la vue de la home

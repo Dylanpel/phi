@@ -1,6 +1,6 @@
 {
   "routes": {
-    "PagesController": [
+    "PageController": [
       {
         "method": "GET",
         "path": "/",
