@@ -9,6 +9,7 @@ lerna-debug.log*
 
 /public/build/
 /vendor/
+/var/
 dist
 dist-ssr
 *.local
