@@ -75,6 +75,16 @@
     "ArticleController": [
       {
         "method": "GET",
+        "path": "/blog/articles",
+        "action": "index"
+      },
+      {
+        "method": "GET",
+        "path": "/nos-actus/blog/{id}",
+        "action": "show"
+      },
+      {
+        "method": "GET",
         "path": "/admin/article/form",
         "action": "createForm"
       },

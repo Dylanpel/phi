@@ -29,6 +29,18 @@ class ArticleController extends Controller
       'articles' => $this->articleManager->findAll()
     ]);
   }
+  
+  /**
+   * Affiche la vue listant les articles
+   * @return void Pas de valeur de retour
+   */
+  public function show(int $id): void
+  {
+    $this->render('articles/show', [
+      // 'article' => $this->articleManager->findBySlug($slug)
+      'article' => $this->articleManager->findById($id)
+    ]);
+  }
 
   /**
    * Affiche la vue du formulaire de création d'article
