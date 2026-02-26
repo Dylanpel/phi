@@ -72,6 +72,28 @@
         "action": "mobilisation"
       }
     ],
+    "ArticleController": [
+      {
+        "method": "GET",
+        "path": "/admin/article/form",
+        "action": "createForm"
+      },
+      {
+        "method": "POST",
+        "path": "/admin/article/form",
+        "action": "create"
+      },
+      {
+        "method": "GET",
+        "path": "/admin/article/{id}/form",
+        "action": "updateForm"
+      },
+      {
+        "method": "POST",
+        "path": "/admin/article/{id}/form",
+        "action": "update"
+      }
+    ],
     "AuthController": [
       {
         "method": "GET",
