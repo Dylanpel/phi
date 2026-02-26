@@ -75,12 +75,12 @@
     "ArticleController": [
       {
         "method": "GET",
-        "path": "/blog/articles",
+        "path": "/nos-actus/blogs",
         "action": "index"
       },
       {
         "method": "GET",
-        "path": "/nos-actus/blog/{id}",
+        "path": "/nos-actus/blog/{slug}",
         "action": "show"
       },
       {

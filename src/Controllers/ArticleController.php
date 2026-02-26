@@ -34,11 +34,10 @@ class ArticleController extends Controller
    * Affiche la vue listant les articles
    * @return void Pas de valeur de retour
    */
-  public function show(int $id): void
+  public function show(string $slug): void
   {
     $this->render('articles/show', [
-      // 'article' => $this->articleManager->findBySlug($slug)
-      'article' => $this->articleManager->findById($id)
+      'article' => $this->articleManager->findBySlug($slug)
     ]);
   }
 
@@ -87,9 +86,9 @@ class ArticleController extends Controller
     //création de l'article en base et récupération entité de ce dernier
     $article = $this->articleManager->create($data);
     
-    //redirection vers le formulaire de modification
-    $id = $article->getId();
-    Router::redirect("/admin/article/$id/form");
+    //redirection vers la page article créé
+    $slug = $article->getSlug();
+    Router::redirect("/nos-actus/blog/$slug");
   }
 
   /**
@@ -134,7 +133,7 @@ class ArticleController extends Controller
 
     $this->articleManager->update($id, $data);
 
-    //redirection vers le formulaire de modification
-    Router::redirect("/admin/article/$id/form");
+    //redirection vers la page article
+    Router::redirect("/nos-actus/blog/$slug");
   }
 }
