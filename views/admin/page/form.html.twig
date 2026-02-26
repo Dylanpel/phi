@@ -30,6 +30,19 @@
               >
             </div>
 
+            <div class="mb-3">
+              <label for="slug" class="form-label">Slug</label>
+              <input 
+                type="text"
+                class="form-control"
+                id="slug"
+                name="slug"
+                disabled
+                required
+                value="{{ page.slug ?? '' }}"
+              >
+            </div>
+
             <!-- CONTENT -->
             <div class="mb-3">
               <label for="content" class="form-label">Contenu</label>
@@ -68,4 +81,8 @@
       </div>
     </div>
   </div>
+{% endblock %}
+
+{% block scripts %}
+  <script src="js/slug.js"></script>
 {% endblock %}
