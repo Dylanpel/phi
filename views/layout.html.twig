@@ -6,49 +6,15 @@
   <base href="{{ baseUrl }}/">
   <title>{% block title %}Pharmacie Humanitaire Internationale{% endblock %}</title>
   <link rel="icon" type="image/svg" href="favicon.svg">
-
-  {% set bsCssFile = app_env == 'dev' ? 'bootstrap.css' : 'bootstrap.min.css' %}
-  {# {% set bsCssFile = 'bootstrap.min.css' %} #}
-  <link rel="stylesheet" href="css/variables.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="build/css/style.css">
 
   {% block stylesheets %}{% endblock %}
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">MonSite</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="{{ url('') }}">Accueil</a></li>
-          <li class="nav-item"><a class="nav-link" href="{{ url('contact')}}">Contact</a></li>
-          {% if isAdmin %}
-            <li class="nav-item"><a class="nav-link" href="{{ url('register') }}">Créer un utilisateur</a></li>
-          {% endif %}
-        </ul>
-
-        <div class="d-flex align-items-center gap-2">
-          {% if isLoggedIn %}
-            <a href="{{ url('logout') }}" class="btn btn-outline-light btn-sm">Déconnexion</a>
-          {% else %}
-            <a href="{{ url('login') }}" class="btn btn-outline-light btn-sm">Connexion</a>
-          {% endif %}
-
-          {% if currentUser %}
-            <small class="navbar-text me-3">
-              <strong>{{ currentUser.login }}</strong><br>
-              Rôle : {{ currentUser.role }}
-            </small>
-          {% endif %}
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  <div style="padding-top: 70px;"></div>
+  {% include "./_includes/_navbar.html.twig" %}
+  {% include "./_includes/_userBubble.html.twig" %}
 
   <main class="container py-4">
     {% block content %}{% endblock %}
