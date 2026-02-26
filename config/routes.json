@@ -15,6 +15,41 @@
         "method": "GET",
         "path": "/contact",
         "action": "contact"
+      },
+      {
+        "method": "GET",
+        "path": "/qui-sommes-nous",
+        "action": "quiSommesNous"
+      },
+      {
+        "method": "GET",
+        "path": "/qui-sommes-nous/histoire",
+        "action": "quiSommesNousHistoire"
+      },
+      {
+        "method": "GET",
+        "path": "/qui-sommes-nous/equipe",
+        "action": "quiSommesNousEquipe"
+      },
+      {
+        "method": "GET",
+        "path": "/qui-sommes-nous/etablisement-Pahrmaceutique",
+        "action": "quiSommesNousEtablissement"
+      },
+      {
+        "method": "GET",
+        "path": "/devenir-benevole",
+        "action": "devenirBenevole"
+      },
+      {
+        "method": "GET",
+        "path": "/faire-un-don",
+        "action": "faireDon"
+      },
+      {
+        "method": "GET",
+        "path": "/mobilisation",
+        "action": "mobilisation"
       }
     ],
     "AuthController": [
