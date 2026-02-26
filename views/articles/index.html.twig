@@ -5,6 +5,11 @@
 {% block content %}
 
 <h1 class="mb-4">Tous les articles</h1>
+{% if isLoggedIn %}
+  <p>
+    <a href="{{ url('/admin/article/form') }}" class="btn btn-primary">Ajouter un article</a>
+  </p>
+{% endif %}
 
 {% if articles is empty %}
   <p class="text-muted">Aucun article publié pour le moment.</p>
