@@ -19,6 +19,12 @@
   <div class="content">
     {{ article.content | raw }}
   </div>
+
+  {% if isLoggedIn %}
+    <footer>
+      <a href="{{ url('/admin/article/' ~ article.id ~ '/form') }}" class="btn btn-primary">Modifier cet article</a>
+    </footer>
+  {% endif %}
 </article>
 
 {% endblock %}
