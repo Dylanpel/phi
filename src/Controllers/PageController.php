@@ -144,71 +144,87 @@ class PageController extends Controller
    * Affiche la vue de la page de contact
    * @return void Pas de valeur de retour
    */
-  public function contact(?array $data = []): void
+  public function contact(): void
   {
-    $this->render('pages/contact', $data);
+    $this->render('pages/contact', [
+      'page' => $this->pageManager->findById(1)
+    ]);
   }
 
   /**
    * Affiche la vue de la page de Qui Sommes Nous
    * @return void Pas de valeur de retour
    */
-  public function quiSommesNous(?array $data = []): void
+  public function quiSommesNous(): void
   {
-    $this->render('pages/qui-sommes-nous', $data);
+    $this->render('pages/qui-sommes-nous', [
+      'page' => $this->pageManager->findById(1)
+    ]);
   }
 
   /**
    * Affiche la vue de la page de Qui Sommes Nous Histoire
    * @return void Pas de valeur de retour
    */
-  public function quiSommesNousHistoire(?array $data = []): void
+  public function quiSommesNousHistoire(): void
   {
-    $this->render('pages/qui-somme-nous/histoire', $data);
+    $this->render('pages/qui-somme-nous/histoire', [
+      'page' => $this->pageManager->findById(1)
+    ]);
   }
 
   /**
    * Affiche la vue de la page de Qui Sommes Nous Equipe
    * @return void Pas de valeur de retour
    */
-  public function quiSommesNousEquipe(?array $data = []): void
+  public function quiSommesNousEquipe(): void
   {
-    $this->render('pages/qui-somme-nous/equipe', $data);
+    $this->render('pages/qui-somme-nous/equipe', [
+      'page' => $this->pageManager->findById(1)
+    ]);
   }
 
   /**
    * Affiche la vue de la page de Qui Sommes Nous Etablissement
    * @return void Pas de valeur de retour
    */
-  public function quiSommesNousEtablissement(?array $data = []): void
+  public function quiSommesNousEtablissement(): void
   {
-    $this->render('pages/qui-somme-nous/etablissement', $data);
+    $this->render('pages/qui-somme-nous/etablissement', [
+      'page' => $this->pageManager->findById(1)
+    ]);
   }
 
   /**
    * Affiche la vue de la page devenir Bénévole
    * @return void Pas de valeur de retour
    */
-  public function devenirBenevole(?array $data = []): void
+  public function devenirBenevole(): void
   {
-    $this->render('pages/devenir_benevole', $data);
+    $this->render('pages/devenir_benevole', [
+      'page' => $this->pageManager->findById(1)
+    ]);
   }
 
   /**
    * Affiche la vue de la page faire un don
    * @return void Pas de valeur de retour
    */
-  public function faireDon(?array $data = []): void
+  public function faireDon(): void
   {
-    $this->render('pages/dons', $data);
+    $this->render('pages/dons', [
+      'page' => $this->pageManager->findById(1)
+    ]);
   }
 
   /**
    * Affiche la vue de la page faire un don
    * @return void Pas de valeur de retour
    */
-  public function mobilisation(?array $data = []): void
+  public function mobilisation(): void
   {
-    $this->render('pages/mobilisation', $data);
+    $this->render('pages/mobilisation', [
+      'page' => $this->pageManager->findById(1)
+    ]);
   }
 }

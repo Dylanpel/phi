@@ -1,0 +1,11 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Qui sommes-nous ?{% endblock %}
+
+{% block content %}
+  <div class="container">
+    title: {{ page.title }}<br/>
+    imageUrl: {{ page.imageUrl }}<br/>
+    content: <div>{{ page.content|raw }}</div>
+  </div>
+{% endblock %}
