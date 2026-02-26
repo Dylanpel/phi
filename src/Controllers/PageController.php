@@ -73,7 +73,7 @@ class PageController extends Controller
     //création de la page en base et récupération entité de cette dernière
     $page = $this->pageManager->create($data);
     
-    //redirection vers la page de modification
+    //redirection vers le formulaire de modification
     $id = $page->getId();
     Router::redirect("/admin/page/$id/form");
   }
