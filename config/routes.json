@@ -53,7 +53,7 @@
       },
       {
         "method": "GET",
-        "path": "/qui-sommes-nous/etablisement-Pahrmaceutique",
+        "path": "/qui-sommes-nous/etablissement-pharmaceutique",
         "action": "quiSommesNousEtablissement"
       },
       {
