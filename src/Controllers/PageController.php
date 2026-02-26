@@ -70,10 +70,12 @@ class PageController extends Controller
       $data['image_url'] = $imageUrl;
     }
     
-    $this->pageManager->create($data);
-
-    //redirection vers la home
-    Router::redirect('/');
+    //création de la page en base et récupération entité de cette dernière
+    $page = $this->pageManager->create($data);
+    
+    //redirection vers la page de modification
+    $id = $page->getId();
+    Router::redirect("/admin/page/$id/form");
   }
 
   /**
