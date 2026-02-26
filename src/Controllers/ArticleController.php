@@ -26,7 +26,7 @@ class ArticleController extends Controller
   public function index(): void
   {
     $this->render('articles/index', [
-      'articles' => $this->articleManager->findAll()
+      'articles' => $this->articleManager->findAll('date','DESC')
     ]);
   }
   

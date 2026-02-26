@@ -39,11 +39,21 @@ abstract class Manager
   
   /**
    * Retourne toutes les entités
+   * @param string|null $orderBy Colonne sur laquelle trier
+   * @param string $order Direction du tri (ASC ou DESC)
    * @return array Tableau d'entités
    */
-  public function findAll(): array
+  public function findAll(?string $orderBy = null, string $order = 'ASC'): array
   {
-    $stmt = $this->db->query("SELECT * FROM {$this->table}");
+    $order = strtoupper($order) === 'DESC' ? 'DESC' : 'ASC';
+    $sql = "SELECT * FROM {$this->table}";
+
+    if ($orderBy !== null) {
+      $orderBy = preg_replace('/[^a-zA-Z0-9_]/', '', $orderBy); // sécurisation
+      $sql .= " ORDER BY {$orderBy} {$order}";
+    }
+
+    $stmt = $this->db->query($sql);
     $results = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 
     return array_map(fn($row) => $this->hydrate($row), $results);
