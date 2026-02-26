@@ -28,8 +28,9 @@
                 required
                 value="{{ article.title ?? '' }}"
               >
-            </div>
+            </div>  
 
+            <!-- SLUG -->
             <div class="mb-3">
               <label for="slug" class="form-label">Slug (non modifiable)</label>
               <input 
@@ -43,6 +44,19 @@
               >
             </div>
 
+            <!-- DATE -->
+            <div class="mb-3">
+              <label for="date" class="form-label">Date de publication</label>
+              <input 
+                type="date"
+                class="form-control"
+                id="date"
+                name="date"
+                required
+                value="{{ article.date ?? '' }}"
+              >
+            </div>
+            
             <!-- CONTENT -->
             <div class="mb-3">
               <label for="content" class="form-label">Contenu</label>
