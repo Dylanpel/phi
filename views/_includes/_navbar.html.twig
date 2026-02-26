@@ -1,6 +1,8 @@
 <nav class="navbar navbar-expand-lg fixed-top px-3 py-2" id="mainNav">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="/">Pharmacie Humanitaire Internationale</a>
+    <a class="navbar-brand fw-bold" href="{{ url('')}}">
+      <img src="/images/logo-phi.svg" alt="Pharmacie Humanitaire Internationale" width="auto" height="75px" />
+    </a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
@@ -8,25 +10,20 @@
 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto gap-2">
-        <li class="nav-item"><a class="nav-link" href="{{ url('')}}">Accueil</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="{{ url('qui-sommes-nous')}}">Qui sommes-nous ?</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{{ url('qui-sommes-nous/histoire')}}">Notre histoire</a></li>
+            <li><a class="dropdown-item" href="{{ url('qui-sommes-nous/equipe')}}">L’équipe</a></li>
+            <li><a class="dropdown-item" href="{{ url('qui-sommes-nous/etablissement-pharmaceutique')}}">L’établissement pharmaceutique</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="{{ url('devenir-benevole')}}">Devenir bénévole</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url('faire-un-don')}}">Faire un don</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url('mobilisation')}}">Mobilisaton</a></li>
         <li class="nav-item"><a class="nav-link" href="{{ url('nos-actus/blog')}}">Blog</a></li>
         <li class="nav-item"><a class="nav-link" href="{{ url('contact')}}">Contact</a></li>
       </ul>
-
-      <div class="d-flex align-items-center gap-2">
-        {% if isLoggedIn %}
-          <a href="{{ url('logout') }}" class="btn btn-outline-light btn-sm">Déconnexion</a>
-        {% else %}
-          <a href="{{ url('login') }}" class="btn btn-outline-light btn-sm">Connexion</a>
-        {% endif %}
-
-        {% if currentUser %}
-          <small class="navbar-text me-3">
-            <strong>{{ currentUser.login }}</strong><br>
-            Rôle : {{ currentUser.role }}
-          </small>
-        {% endif %}
-      </div>
     </div>
   </div>
 </nav>

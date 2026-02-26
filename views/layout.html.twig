@@ -6,16 +6,15 @@
   <base href="{{ baseUrl }}/">
   <title>{% block title %}Pharmacie Humanitaire Internationale{% endblock %}</title>
   <link rel="icon" type="image/svg" href="favicon.svg">
-
-  {% set bsCssFile = app_env == 'dev' ? 'bootstrap.css' : 'bootstrap.min.css' %}
-  {# {% set bsCssFile = 'bootstrap.min.css' %} #}
-  <link rel="stylesheet" href="css/variables.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="build/css/style.css">
 
   {% block stylesheets %}{% endblock %}
 </head>
 <body>
   {% include "./_includes/_navbar.html.twig" %}
+  {% include "./_includes/_userBubble.html.twig" %}
 
   <main class="container py-4">
     {% block content %}{% endblock %}

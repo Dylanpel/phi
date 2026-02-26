@@ -1,0 +1,28 @@
+{# Bulle flottante profil utilisateur #}
+<div id="userBubble" class="position-fixed bottom-0 end-0 m-3" style="z-index: 1050;">
+  
+  {# Bouton bulle #}
+  <button
+    class="btn btn-primary rounded-circle shadow d-flex align-items-center justify-content-center"
+    style="width:50px; height:50px;"
+    data-bs-toggle="popover"
+    data-bs-placement="top"
+    data-bs-trigger="click"
+    data-bs-html="true"
+    data-bs-content="
+      {% if currentUser %}
+        <div class='text-center mb-2'>
+          <strong>{{ currentUser.login }}</strong><br>
+          <small class='text-muted'>{{ currentUser.role }}</small>
+        </div>
+        <hr class='my-2'>
+      {% endif %}
+      {% if isLoggedIn %}
+        <a href='{{ url('logout') }}' class='btn btn-outline-danger btn-sm w-100'>Déconnexion</a>
+      {% else %}
+        <a href='{{ url('login') }}' class='btn btn-primary btn-sm w-100'>Connexion</a>
+      {% endif %}
+    ">
+    <i class="bi bi-person-fill fs-5"></i>
+  </button>
+</div>
