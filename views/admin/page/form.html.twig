@@ -30,18 +30,18 @@
               >
             </div>
 
-            <div class="mb-3">
-              <label for="slug" class="form-label">Slug</label>
+            {# <div class="mb-3">
+              <label for="slug" class="form-label">Slug (non modifiable)</label>
               <input 
                 type="text"
                 class="form-control"
                 id="slug"
                 name="slug"
-                disabled
+                readonly
                 required
                 value="{{ page.slug ?? '' }}"
               >
-            </div>
+            </div> #}
 
             <!-- CONTENT -->
             <div class="mb-3">
