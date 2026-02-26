@@ -12,6 +12,7 @@ class MobilizationManager extends Manager
   protected array $tableColumns = [
     'id',
     'title',
+    'slug',
     'description',
     'image_url'
   ];

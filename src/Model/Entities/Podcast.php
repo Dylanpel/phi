@@ -7,6 +7,7 @@ use App\Core\Abstract\Entity;
 class Podcast extends Entity
 {
   private ?string $title = null;
+  private ?string $slug = null;
   private ?string $date = null;
   private ?string $path = null;
   private ?string $description = null;
@@ -14,6 +15,9 @@ class Podcast extends Entity
 
   public function getTitle(): ?string { return $this->title; }
   public function setTitle(?string $title): self { $this->title = $title; return $this; }
+
+  public function getSlug(): ?string { return $this->slug; }
+  public function setSlug(?string $slug): self { $this->slug = $slug; return $this; }
 
   public function getDate(): ?string { return $this->date; }
   public function setDate(?string $date): self { $this->date = $date; return $this; }

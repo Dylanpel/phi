@@ -12,6 +12,7 @@ class ArticleManager extends Manager
   protected array $tableColumns = [
     'id',
     'title',
+    'slug',
     'date',
     'content',
     'image_url',

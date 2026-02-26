@@ -12,6 +12,7 @@ class PodcastManager extends Manager
   protected array $tableColumns = [
     'id',
     'title',
+    'slug',
     'date',
     'path',
     'description',
