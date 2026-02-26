@@ -29,7 +29,8 @@ final class TwigFactory
     $twig->addGlobal('currentUser', Auth::getUser());
     $twig->addGlobal('baseUrl', Router::getBaseUrl());
     $twig->addGlobal('app_env', $_ENV['APP_ENV'] ?? 'prod');
-
+    $twig->addGlobal('tiny_key', $_ENV['TINY_KEY'] ?? 'no-api-key');
+    
     // Ajout de l'extension debug (dump()) en dev
     if ($_ENV['APP_ENV'] === 'dev') {
       $twig->addExtension(new \Twig\Extension\DebugExtension());

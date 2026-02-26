@@ -1,0 +1,33 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Blog&nbsp;: {{ article.title }}{% endblock %}
+
+{% block content %}
+
+<article>
+  <header>
+    <h1>{{ article.title }}</h1>
+    <p>
+      <time datetime="{{ article.date }}">{{ article.date | date('d/m/Y') }}</time>
+    </p>
+  </header>
+
+  {% if article.imageUrl %}
+    <img src="{{ article.imageUrl }}" alt="{{ article.title }}">
+  {% endif %}
+
+  <div class="content">
+    {{ article.content | raw }}
+  </div>
+
+  {% if isLoggedIn %}
+    <footer>
+      <a href="{{ url('/admin/article/' ~ article.id ~ '/form') }}" class="btn btn-primary">Modifier cet article</a>
+      {% if isAdmin %}
+        <a href="{{ url('/admin/article/' ~ article.id ~ '/delete') }}" class="btn btn-danger">Supprimer cet article</a>
+      {% endif %}
+    </footer>
+  {% endif %}
+</article>
+
+{% endblock %}
