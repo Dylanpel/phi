@@ -271,7 +271,7 @@ final class Router
     
     // Transformer {id} en groupe de capture ([^/]+)
     $regex = preg_replace('/\{[a-zA-Z]+\}/', '([^/]+)', $path);
-    $regex = "#^{$regex}$#";
+    $regex = "#^{$regex}/?$#";
     
     // Vérifier si l'URI correspond au pattern
     if (preg_match($regex, $uri, $matches)) {
