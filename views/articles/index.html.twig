@@ -1,0 +1,42 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Tous les articles du blog{% endblock %}
+
+{% block content %}
+
+<h1 class="mb-4">Tous les articles</h1>
+{% if isLoggedIn %}
+  <p>
+    <a href="{{ url('/admin/article/form') }}" class="btn btn-primary">Ajouter un article</a>
+  </p>
+{% endif %}
+
+{% if articles is empty %}
+  <p class="text-muted">Aucun article publié pour le moment.</p>
+{% else %}
+  <ul class="list-unstyled">
+    {% for article in articles %}
+    <li class="d-flex gap-3 mb-4 pb-4 border-bottom">
+      {% if article.imageUrl %}
+        <img src="{{ article.imageUrl }}" alt="{{ article.title }}" class="rounded" style="width:160px; height:110px; object-fit:cover; flex-shrink:0;">
+      {% endif %}
+      <div>
+        <h2 class="h5 mb-1">
+          <a href="{{ url('/nos-actus/blog/' ~ article.slug) }}" class="text-decoration-none">{{ article.title }}</a>
+        </h2>
+        <time class="text-muted small" datetime="{{ article.date }}">{{ article.date | date('d/m/Y') }}</time>
+        <p class="mt-2 mb-1 text-muted">{{ article.content | striptags | slice(0, 150) }}…</p>
+        <a href="{{ url('/nos-actus/blog/' ~ article.slug) }}" class="btn btn-sm btn-outline-primary mt-1">Lire la suite</a>
+        {% if isLoggedIn %}
+          <a href="{{ url('/admin/article/' ~ article.id ~ '/form') }}" class="btn btn-primary">Modifier cet article</a>
+          {% if isAdmin %}
+            <a href="{{ url('/admin/article/' ~ article.id ~ '/delete') }}" class="btn btn-danger">Supprimer cet article</a>
+          {% endif %}
+        {% endif %}
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+{% endblock %}

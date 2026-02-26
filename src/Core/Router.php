@@ -2,7 +2,7 @@
 
 namespace App\Core;
 
-use App\Controllers\PagesController;
+use App\Controllers\PageController;
 
 final class Router
 {
@@ -271,7 +271,7 @@ final class Router
     
     // Transformer {id} en groupe de capture ([^/]+)
     $regex = preg_replace('/\{[a-zA-Z]+\}/', '([^/]+)', $path);
-    $regex = "#^{$regex}$#";
+    $regex = "#^{$regex}/?$#";
     
     // Vérifier si l'URI correspond au pattern
     if (preg_match($regex, $uri, $matches)) {
@@ -297,8 +297,8 @@ final class Router
   private function error404(): void
   {
     http_response_code(404);
-    $pagesController = new PagesController();
-    $pagesController->error([
+    $pageController = new PageController();
+    $pageController->error([
       'error' => '404 - Page non trouvée'
     ]);
   }

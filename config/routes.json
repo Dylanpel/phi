@@ -1,6 +1,6 @@
 {
   "routes": {
-    "PagesController": [
+    "PageController": [
       {
         "method": "GET",
         "path": "/",
@@ -15,6 +15,26 @@
         "method": "GET",
         "path": "/contact",
         "action": "contact"
+      },
+      {
+        "method": "GET",
+        "path": "/admin/page/form",
+        "action": "createForm"
+      },
+      {
+        "method": "POST",
+        "path": "/admin/page/form",
+        "action": "create"
+      },
+      {
+        "method": "GET",
+        "path": "/admin/page/{id}/form",
+        "action": "updateForm"
+      },
+      {
+        "method": "POST",
+        "path": "/admin/page/{id}/form",
+        "action": "update"
       },
       {
         "method": "GET",
@@ -50,6 +70,43 @@
         "method": "GET",
         "path": "/mobilisation",
         "action": "mobilisation"
+      }
+    ],
+    "ArticleController": [
+      {
+        "method": "GET",
+        "path": "/nos-actus/blog",
+        "action": "index"
+      },
+      {
+        "method": "GET",
+        "path": "/nos-actus/blog/{slug}",
+        "action": "show"
+      },
+      {
+        "method": "GET",
+        "path": "/admin/article/form",
+        "action": "createForm"
+      },
+      {
+        "method": "POST",
+        "path": "/admin/article/form",
+        "action": "create"
+      },
+      {
+        "method": "GET",
+        "path": "/admin/article/{id}/form",
+        "action": "updateForm"
+      },
+      {
+        "method": "POST",
+        "path": "/admin/article/{id}/form",
+        "action": "update"
+      },
+      {
+        "method": "GET",
+        "path": "/admin/article/{id}/delete",
+        "action": "delete"
       }
     ],
     "AuthController": [

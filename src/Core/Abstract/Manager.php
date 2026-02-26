@@ -39,13 +39,57 @@ abstract class Manager
   
   /**
    * Retourne toutes les entités
+   * @param string|null $orderBy Colonne sur laquelle trier
+   * @param string $direction Direction du tri (ASC ou DESC)
    * @return array Tableau d'entités
    */
-  public function findAll(): array
+  public function findAll(
+    ?string $orderBy = null, 
+    string $direction = 'ASC',
+    ?int $limit = null
+  ): array|object|null
   {
-    $stmt = $this->db->query("SELECT * FROM {$this->table}");
+    $sql = "SELECT * FROM {$this->table}";
+    
+    // Ajout du ORDER BY si spécifié
+    if ($orderBy !== null) {
+      $this->validateOrderByColumn($orderBy);
+      $this->validateDirection($direction);
+      $sql .= " ORDER BY {$orderBy} " . strtoupper($direction);
+    }
+
+    // Ajout du LIMIT si spécifié
+    if ($limit !== null) {
+      if ($limit < 1) {
+        throw new \InvalidArgumentException("La limite doit être un entier positif");
+      }
+      $sql .= " LIMIT " . (int)$limit;
+    }
+
+    //exécution de la rquête
+    $stmt = $this->db->query($sql);
+    
+    // Si limit = 1, on retourne une seule entité (ou null)
+    if ($limit === 1) {
+      $result = $stmt->fetch(\PDO::FETCH_ASSOC);
+      return $result ? $this->hydrate($result) : null;
+    }
+
+    // Sinon, on retourne un tableau d'entités
     $results = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 
+    // Si aucun orderBy/limit n'est spécifié et qu'il n'y a qu'un résultat,
+    // on retourne l'entité directement (comportement historique)
+    if ($orderBy === null && $limit === null && count($results) === 1) {
+      return $this->hydrate($results[0]);
+    }
+
+    // Si pas de résultats et pas de limit/orderBy, on retourne null (comportement historique)
+    if ($orderBy === null && $limit === null && empty($results)) {
+      return null;
+    }
+    
+    // Sinon on retourne le tableau (peut être vide)
     return array_map(fn($row) => $this->hydrate($row), $results);
   }
 
