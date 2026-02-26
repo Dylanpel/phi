@@ -1,12 +1,12 @@
 #mainNav {
   transition: all 0.3s ease;
-  background-color: rgba(#fff, .15);
+  background-color: rgba(#fff, .3);
   backdrop-filter: blur(8px);
   margin: 2rem 1rem;
   border-radius: $border-radius-2xl;
 
   &.scrolled {
-    background-color: rgba(#fff, .35);
+    background-color: rgba(#fff, .4);
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 12px rgba(#000, 0.1);
   }
