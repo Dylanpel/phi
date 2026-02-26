@@ -46,7 +46,7 @@ class PageController extends Controller
   }
 
   /**
-   * Traitement du formulaire de création d'artiste
+   * Traitement du formulaire de création de page
    * @return void Pas de valeur de retour
    */
   public function create(): void
@@ -65,13 +65,55 @@ class PageController extends Controller
     ];
     
     if(!empty($imageUrl)) {
-      $data['imageUrl'] = $imageUrl;
+      $data['image_url'] = $imageUrl;
     }
     
     $this->pageManager->create($data);
 
     //redirection vers la home
     Router::redirect('/');
+  }
+
+  /**
+   * Affiche la vue du formulaire de modification de page
+   * @return void Pas de valeur de retour
+   */
+  public function updateForm(int $id): void
+  {
+    //obligation de la connexion en tant qu'admin
+    $this->requireAdmin();
+
+    $this->render('admin/page/form', [
+      'action' => "/admin/page/$id/form",
+      'page' => $this->pageManager->findById($id)
+    ]);
+  }
+
+  /**
+   * Traitement du formulaire de modification de page
+   * @return void Pas de valeur de retour
+   */
+  public function update(int $id): void
+  {
+    //obligation de la connexion en tant qu'admin
+    $this->requireAdmin();
+    
+    //récupération des infos envoyées par le formulaire
+    $title = trim($_POST['title'] ?? '');
+    $content = trim($_POST['content'] ?? '');
+    $imageUrl = trim($_POST['image_url'] ?? '');
+
+    //création object contenant les données à mettre à jour
+    $data = [
+      'title' => $title,
+      'content' => $content,
+      'image_url' => $imageUrl,
+    ];
+
+    $this->pageManager->update($id, $data);
+
+    //redirection vers le formulaire de modification
+    Router::redirect("/admin/page/$id/form");
   }
   
   /**

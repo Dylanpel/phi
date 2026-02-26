@@ -28,6 +28,16 @@
       },
       {
         "method": "GET",
+        "path": "/admin/page/{id}/form",
+        "action": "updateForm"
+      },
+      {
+        "method": "POST",
+        "path": "/admin/page/{id}/form",
+        "action": "update"
+      },
+      {
+        "method": "GET",
         "path": "/qui-sommes-nous",
         "action": "quiSommesNous"
       },
