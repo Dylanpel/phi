@@ -37,7 +37,7 @@ class ArticleController extends Controller
   public function createForm(): void
   {
     //obligation de la connexion en tant qu'admin
-    $this->requireAdmin();
+    $this->requireAuth();
 
     $this->render('admin/article/form', [
       'action' => '/admin/article/form'
@@ -51,7 +51,7 @@ class ArticleController extends Controller
   public function create(): void
   {
     //obligation de la connexion en tant qu'admin
-    $this->requireAdmin();
+    $this->requireAuth();
 
     //récupération des infos envoyées par le formulaire
     $title = trim($_POST['title'] ?? '');
@@ -65,6 +65,7 @@ class ArticleController extends Controller
       'slug' => $slug,
       'date' => $date,
       'content' => $content,
+      'id_user' => Auth::getUserId()
     ];
     
     if(!empty($imageUrl)) {
@@ -86,11 +87,11 @@ class ArticleController extends Controller
   public function updateForm(int $id): void
   {
     //obligation de la connexion en tant qu'admin
-    $this->requireAdmin();
+    $this->requireAuth();
 
     $this->render('admin/article/form', [
       'action' => "/admin/article/$id/form",
-      'page' => $this->articleManager->findById($id)
+      'article' => $this->articleManager->findById($id)
     ]);
   }
 
@@ -101,7 +102,7 @@ class ArticleController extends Controller
   public function update(int $id): void
   {
     //obligation de la connexion en tant qu'admin
-    $this->requireAdmin();
+    $this->requireAuth();
     
     //récupération des infos envoyées par le formulaire
     $title = trim($_POST['title'] ?? '');
