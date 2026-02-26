@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg fixed-top px-3 py-2" id="mainNav">
+<nav class="navbar navbar-expand-xl fixed-top px-3 py-2" id="mainNav">
   <div class="container">
     <a class="navbar-brand fw-bold" href="{{ url('')}}">
       <img src="/images/logo-phi.svg" alt="Pharmacie Humanitaire Internationale" width="auto" height="75px" />
@@ -21,7 +21,21 @@
         <li class="nav-item"><a class="nav-link" href="{{ url('devenir-benevole')}}">Devenir bénévole</a></li>
         <li class="nav-item"><a class="nav-link" href="{{ url('faire-un-don')}}">Faire un don</a></li>
         <li class="nav-item"><a class="nav-link" href="{{ url('mobilisation')}}">Mobilisaton</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url('nos-actus/blog')}}">Blog</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="{{ url('associations')}}">Nos associations</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{{ url('associations/carte')}}">Nos associations locales</a></li>
+            <li><a class="dropdown-item" href="{{ url('associations/creer-asso')}}">Créer une association</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="{{ url('nos-actus')}}">Nos actus</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{{ url('nos-actus/blog')}}">Blog</a></li>
+            <li><a class="dropdown-item" href="{{ url('nos-actus/podcast')}}">Podcasts</a></li>
+            <li><a class="dropdown-item" href="{{ url('nos-actus/brochure')}}">Brochure</a></li>
+          </ul>
+        </li>
         <li class="nav-item"><a class="nav-link" href="{{ url('contact')}}">Contact</a></li>
       </ul>
     </div>
