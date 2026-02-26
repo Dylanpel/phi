@@ -22,6 +22,12 @@
         <time class="text-muted small" datetime="{{ article.date }}">{{ article.date | date('d/m/Y') }}</time>
         <p class="mt-2 mb-1 text-muted">{{ article.content | striptags | slice(0, 150) }}…</p>
         <a href="{{ url('/nos-actus/blog/' ~ article.slug) }}" class="btn btn-sm btn-outline-primary mt-1">Lire la suite</a>
+        {% if isLoggedIn %}
+          <a href="{{ url('/admin/article/' ~ article.id ~ '/form') }}" class="btn btn-primary">Modifier cet article</a>
+          {% if isAdmin %}
+            <a href="{{ url('/admin/article/' ~ article.id ~ '/delete') }}" class="btn btn-danger">Supprimer cet article</a>
+          {% endif %}
+        {% endif %}
       </div>
     </li>
     {% endfor %}

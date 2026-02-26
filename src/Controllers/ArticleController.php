@@ -61,7 +61,7 @@ class ArticleController extends Controller
    */
   public function create(): void
   {
-    //obligation de la connexion en tant qu'admin
+    //obligation de la connexion
     $this->requireAuth();
 
     //récupération des infos envoyées par le formulaire
@@ -97,7 +97,7 @@ class ArticleController extends Controller
    */
   public function updateForm(int $id): void
   {
-    //obligation de la connexion en tant qu'admin
+    //obligation de la connexion
     $this->requireAuth();
 
     $this->render('admin/article/form', [
@@ -112,7 +112,7 @@ class ArticleController extends Controller
    */
   public function update(int $id): void
   {
-    //obligation de la connexion en tant qu'admin
+    //obligation de la connexion
     $this->requireAuth();
     
     //récupération des infos envoyées par le formulaire
@@ -135,5 +135,22 @@ class ArticleController extends Controller
 
     //redirection vers la page article
     Router::redirect("/nos-actus/blog/$slug");
+  }
+  
+  /**
+   * Supprimer un artiste
+   * @param int $id Identifiant de l'artiste à supprimer
+   * @return void Pas de valeur de retour
+   */
+  public function delete(int $id): void
+  {
+    //obligation de la connexion en tant qu'admin
+    $this->requireAdmin();
+
+    //suppression article en base
+    $this->articleManager->delete($id);
+    
+    //redirection vers la page listing articles
+    Router::redirect("/nos-actus/blog");
   }
 }

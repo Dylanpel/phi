@@ -75,7 +75,7 @@
     "ArticleController": [
       {
         "method": "GET",
-        "path": "/nos-actus/blogs",
+        "path": "/nos-actus/blog",
         "action": "index"
       },
       {
@@ -102,6 +102,11 @@
         "method": "POST",
         "path": "/admin/article/{id}/form",
         "action": "update"
+      },
+      {
+        "method": "GET",
+        "path": "/admin/article/{id}/delete",
+        "action": "delete"
       }
     ],
     "AuthController": [

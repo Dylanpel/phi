@@ -23,6 +23,9 @@
   {% if isLoggedIn %}
     <footer>
       <a href="{{ url('/admin/article/' ~ article.id ~ '/form') }}" class="btn btn-primary">Modifier cet article</a>
+      {% if isAdmin %}
+        <a href="{{ url('/admin/article/' ~ article.id ~ '/delete') }}" class="btn btn-danger">Supprimer cet article</a>
+      {% endif %}
     </footer>
   {% endif %}
 </article>
