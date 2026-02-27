@@ -66,7 +66,7 @@ final class Router
   private function loadRoutesFromJson(): void
   {
     // Construire le chemin complet vers le fichier de config
-    $configPath = __DIR__ . '/../../Config/routes.json';
+    $configPath = __DIR__ . '/../../config/routes.json';
     
     // Vérifier que le fichier existe
     if (!file_exists($configPath)) {
