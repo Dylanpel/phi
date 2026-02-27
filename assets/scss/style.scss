@@ -1,17 +1,8 @@
-@import 'common/variables';
+@import './fonts/fontface';
+@import './common/variables';
 @import './bootstrap/bootstrap.scss';
 
 @import './components/navbar';
-// Fonts
-
-@import "./common/font";
-
-html {
-    font-family: "Comfortaa";
-    font-weight: 400;
-}
-
-// Layout 
 
 @import "layout/home";
 @import "layout/mobilisation";
