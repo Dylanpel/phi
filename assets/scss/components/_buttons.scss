@@ -9,3 +9,8 @@
 .btn-link {
   --#{$prefix}btn-font-weight: #{$font-weight-bold};
 }
+
+//override couleur de texte
+.btn-quaternary {
+  @include button-variant($quaternary, $quaternary, $color: $white);
+}
