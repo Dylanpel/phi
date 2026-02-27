@@ -1,0 +1,84 @@
+@use "../common/variables";
+
+// -------- Background --------
+
+.intro {
+  position: relative;
+  overflow: hidden;
+  min-height: 400px;
+  margin-bottom: 150px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+
+    background-image: url('/images/home/pattern_sans-fond.png');
+    background-repeat: repeat;
+    background-size: 400px;
+
+    opacity: 0.12;
+    mix-blend-mode: multiply;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+
+// -------- BOUTONS ---------
+.btn-don {
+    width: auto;
+    margin-top: 32px;
+}
+
+
+.btn-search {
+    width: 20%;
+}
+
+// -------- CHIFFRES CLÉS ---------
+.row.g-4 {
+    margin-top: 300px;
+    .bg-white {
+        background: white;
+        border-radius: 16px;
+        padding: 32px 20px;
+        transition: box-shadow 0.3s, transform 0.3s;
+        box-shadow: 0 2px 12px rgba($primary, 0.06);
+
+        &:hover {
+            box-shadow: 0 8px 30px rgba($primary, 0.12);
+            transform: translateY(-4px);
+        }
+    }
+}
+
+// -------- Gallerie --------- 
+
+.gallerie {
+    padding-bottom: 20px;
+}
+
+.img-placeholder {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+
+    &:hover {
+        transform: scale(1.02);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.14);
+    }
+}
+
+.img-large { height: 280px; }
+.img-small { height: 130px; }
+

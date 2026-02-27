@@ -2,9 +2,11 @@
 function navbarBodyPadding() {
   const navbar = document.getElementById('mainNav');
   const style = window.getComputedStyle(navbar);
+  const main = document.body.querySelector('main');
+  const firstChild = main.firstElementChild;
   const marginTop = parseFloat(style.marginTop);
   const marginBottom = parseFloat(style.marginBottom);
-  document.body.style.paddingTop = (navbar.offsetHeight + marginTop + marginBottom) + 'px';
+  firstChild.style.paddingTop = (navbar.offsetHeight + marginTop + marginBottom) + 'px';
 }
 
 function navbarScroll() {

@@ -3,13 +3,14 @@
 namespace App\Controllers;
 
 use App\Core\Abstract\Controller;
-use App\Core\Auth;
 use App\Core\Router;
+use App\Model\Managers\ArticleManager;
 use App\Model\Managers\PageManager;
 
 class PageController extends Controller
 {
   private PageManager $pageManager;
+  private ArticleManager $articleManager;
 
   public function __construct()
   {
@@ -17,6 +18,7 @@ class PageController extends Controller
 
     //on instancie les managers directement à l'instantiation
     $this->pageManager = new PageManager();
+    $this->articleManager = new ArticleManager();
   }
 
   /**
@@ -27,7 +29,8 @@ class PageController extends Controller
   {
     $this->render('pages/home', [
       //spécifier en dûr id de la page en base
-      'page' => $this->pageManager->findById(1)
+      'page' => $this->pageManager->findById(1),
+      'blogLastArticles' => $this->articleManager->findAll('date','DESC', 5)
     ]);
   }
 
@@ -140,71 +143,87 @@ class PageController extends Controller
    * Affiche la vue de la page de contact
    * @return void Pas de valeur de retour
    */
-  public function contact(?array $data = []): void
+  public function contact(): void
   {
-    $this->render('pages/contact', $data);
+    $this->render('pages/contact', [
+      'page' => $this->pageManager->findById(1)
+    ]);
   }
 
   /**
    * Affiche la vue de la page de Qui Sommes Nous
    * @return void Pas de valeur de retour
    */
-  public function quiSommesNous(?array $data = []): void
+  public function quiSommesNous(): void
   {
-    $this->render('pages/qui-sommes-nous', $data);
+    $this->render('pages/qui-sommes-nous', [
+      'page' => $this->pageManager->findById(1)
+    ]);
   }
 
   /**
    * Affiche la vue de la page de Qui Sommes Nous Histoire
    * @return void Pas de valeur de retour
    */
-  public function quiSommesNousHistoire(?array $data = []): void
+  public function quiSommesNousHistoire(): void
   {
-    $this->render('pages/qui-somme-nous/histoire', $data);
+    $this->render('pages/qui-somme-nous/histoire', [
+      'page' => $this->pageManager->findById(1)
+    ]);
   }
 
   /**
    * Affiche la vue de la page de Qui Sommes Nous Equipe
    * @return void Pas de valeur de retour
    */
-  public function quiSommesNousEquipe(?array $data = []): void
+  public function quiSommesNousEquipe(): void
   {
-    $this->render('pages/qui-somme-nous/equipe', $data);
+    $this->render('pages/qui-somme-nous/equipe', [
+      'page' => $this->pageManager->findById(1)
+    ]);
   }
 
   /**
    * Affiche la vue de la page de Qui Sommes Nous Etablissement
    * @return void Pas de valeur de retour
    */
-  public function quiSommesNousEtablissement(?array $data = []): void
+  public function quiSommesNousEtablissement(): void
   {
-    $this->render('pages/qui-somme-nous/etablissement', $data);
+    $this->render('pages/qui-somme-nous/etablissement', [
+      'page' => $this->pageManager->findById(1)
+    ]);
   }
 
   /**
    * Affiche la vue de la page devenir Bénévole
    * @return void Pas de valeur de retour
    */
-  public function devenirBenevole(?array $data = []): void
+  public function devenirBenevole(): void
   {
-    $this->render('pages/devenir_benevole', $data);
+    $this->render('pages/devenir_benevole', [
+      'page' => $this->pageManager->findById(1)
+    ]);
   }
 
   /**
    * Affiche la vue de la page faire un don
    * @return void Pas de valeur de retour
    */
-  public function faireDon(?array $data = []): void
+  public function faireDon(): void
   {
-    $this->render('pages/dons', $data);
+    $this->render('pages/dons', [
+      'page' => $this->pageManager->findById(1)
+    ]);
   }
 
   /**
    * Affiche la vue de la page faire un don
    * @return void Pas de valeur de retour
    */
-  public function mobilisation(?array $data = []): void
+  public function mobilisation(): void
   {
-    $this->render('pages/mobilisation', $data);
+    $this->render('pages/mobilisation', [
+      'page' => $this->pageManager->findById(1)
+    ]);
   }
 }
