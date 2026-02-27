@@ -4,6 +4,7 @@
   backdrop-filter: blur(8px);
   margin: 2rem 1rem;
   border-radius: $border-radius-2xl;
+  border: 1px solid $secondary;
 
   &.scrolled {
     background-color: rgba(#fff, .4);
