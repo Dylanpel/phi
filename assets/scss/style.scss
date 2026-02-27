@@ -1,26 +1,14 @@
 //polices spécifiques au site
 @import './fonts/fontface';
 
-//import des fonctions de bootsrap avant override pour y accéder
-@import "./bootstrap/functions";
-@import "./bootstrap/variables";
-
 //override des variables de bootstrap
 @import './common/variables';
-
-//ajout des nouvelles couleurs au mapping général
-$theme-colors: map-merge($theme-colors, (
-  "primary":    $primary,
-  "secondary":  $secondary,
-  "tertiary":   $tertiary,
-  "quaternary": $quaternary
-));
-
 
 //import bootstrap global
 @import './bootstrap/bootstrap.scss';
 
 //overrides des composants
+@import './components/buttons';
 @import './components/navbar';
 
 //pages du site
