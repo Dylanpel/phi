@@ -1,0 +1,16 @@
+@use "../common/variables";
+
+.hero-histoire {
+    background: #1a3a2a;
+    .date {
+        margin-top: 100px;
+    }
+
+    .text-intro {
+        margin-bottom: 100px;
+    }
+}
+
+.bg-light .row {
+  margin-top: 0 !important;
+}
