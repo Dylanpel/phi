@@ -1,0 +1,29 @@
+@use "../common/variables";
+
+.hero-histoire {
+    background: #1a3a2a;
+    .date {
+        margin-top: 100px;
+    }
+
+    .text-intro {
+        margin-bottom: 100px;
+    }
+}
+
+.timeline-line {
+    border-left: 3px solid $tertiary;
+}
+
+.timeline-dot { width: 14px; 
+    height: 14px;
+    background-color: $tertiary; 
+    border: 2px solid #fff; 
+    border-radius: 50%; 
+    margin-left: -8.5px; 
+    flex-shrink: 0; 
+}
+
+.bg-fin {
+    background: linear-gradient(135deg, $primary 0%, $tertiary 100%);
+}
