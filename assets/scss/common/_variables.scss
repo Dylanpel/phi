@@ -1,3 +1,8 @@
+//import des fonctions de bootsrap avant override pour y accéder
+@import "../bootstrap/functions";
+@import "../bootstrap/variables";
+
+
 // Color system
 //
 //
@@ -5,6 +10,15 @@
 // scss-docs-start theme-color-variables
 $primary: #01664a;
 $secondary: #b5d59a;
+$tertiary: #d10565;
+$quaternary: #f38f1a;
+
+$theme-colors: map-merge($theme-colors, (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "tertiary":   $tertiary,
+  "quaternary": $quaternary
+));
 
 
 // Typography
@@ -15,5 +29,28 @@ $secondary: #b5d59a;
 // stylelint-disable value-keyword-case
 $font-family-sans-serif: "Comfortaa", "Helvetica Neue", "Liberation Sans", Arial, sans-serif;
 
+// scss-docs-start headings-variables
+$headings-font-weight: 600;
 
 
+// Buttons
+//
+// For each of Bootstrap's buttons, define text, background, and border color.
+
+$btn-color: $white;
+$btn-font-size: $font-size-base * .875;
+
+$btn-font-size:    $input-btn-font-size-sm;
+$btn-font-size-sm: $input-btn-font-size-sm * .85;
+$btn-font-size-lg: $input-btn-font-size;
+
+$btn-font-weight: $font-weight-semibold;
+
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius:    var(--#{$prefix}border-radius-xl);
+$btn-border-radius-sm: var(--#{$prefix}border-radius-lg);
+$btn-border-radius-lg: var(--#{$prefix}border-radius-xxl);
+
+$btn-link-color: $tertiary;
+$btn-link-hover-color: shift-color($btn-link-color, $link-shade-percentage);
+$btn-link-focus-shadow-rgb:   to-rgb(mix(color-contrast($btn-link-color), $btn-link-color, 15%));

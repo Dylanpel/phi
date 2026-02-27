@@ -1,8 +1,16 @@
+//polices spécifiques au site
 @import './fonts/fontface';
+
+//override des variables de bootstrap
 @import './common/variables';
+
+//import bootstrap global
 @import './bootstrap/bootstrap.scss';
 
+//overrides des composants
+@import './components/buttons';
 @import './components/navbar';
 
+//pages du site
 @import "layout/home";
 @import "layout/mobilisation";
