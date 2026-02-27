@@ -7,48 +7,51 @@
 
 {% block content %}
 <!-- intro -->
-  <div class="container container-fluid">
-    <div class="intro row mb-5">
-        <div class="col-6">
-            <h1>Pour une santé sans frontière</h1>
-            <div class="text-intro">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum dicta amet debitis officia numquam porro earum dolores dignissimos deserunt modi quia provident, eos voluptatum unde totam fugit. Rerum, nobis!</p>
-            </div>
-            <div class="btn-don mt-1">
-                <a href="#"class="btn btn-primary">Don</a>
-            </div>
-            <div class="brochure mt-3">
-                <a href="#">Telecharger la brochure</a>
-            </div>
+  <div class="intro">
+  <div class="container">
+    <div class="row align-items-center" style="min-height: 400px;">
+      <div class="col-6">
+        <h1>Pour une santé sans frontières</h1>
+        <div class="text-intro">
+          <p>P.H.I. agit pour la santé et la solidarité à l'international en mobilisant dons financiers et matériels, en soutenant des structures de santé locales et en développant des projets durables.</p>
         </div>
+        <div class="mt-1">
+          <a href="#" class="btn btn-primary">Faire un Don</a>
+        </div>
+        <div class="mt-3">
+          <a href="#">Telecharger la brochure</a>
+        </div>
+      </div>
     </div>
   </div>
+</div>
+  
   <hr>
   <!-- Chiffre clé -->
   <div class="container container-fluid">
-    <div class="row g-4 text-center mt-5 mb-5">
+    <div class="row g-4 text-center mt-5 mb-5 py-3">
         <div class="col-12 col-sm-6">
             <div class="bg-white rounded-3 p-4">
             <h2 class="fw-bold text-primary mb-1">38</h2>
-            <p class="text-muted small mb-0">Utilisateurs actifs</p>
+            <p class="text-muted small mb-0">Association Locales</p>
             </div>
         </div>
         <div class="col-12 col-sm-6">
             <div class="bg-white rounded-3 p-4">
-            <h2 class="fw-bold text-primary mb-1">158</h2>
-            <p class="text-muted small mb-0">Satisfaction client</p>
+            <h2 class="fw-bold text-primary mb-1">58</h2>
+            <p class="text-muted small mb-0">Fournisseurs Partenaires</p>
             </div>
         </div>
         <div class="col-12 col-sm-6">
             <div class="bg-white rounded-3 p-4">
             <h2 class="fw-bold text-primary mb-1">176</h2>
-            <p class="text-muted small mb-0">Projets livrés</p>
+            <p class="text-muted small mb-0">Centre de soin approvisionnés</p>
             </div>
         </div>
         <div class="col-12 col-sm-6">
             <div class="bg-white rounded-3 p-4">
             <h2 class="fw-bold text-primary mb-1">864</h2>
-            <p class="text-muted small mb-0">D'expérience</p>
+            <p class="text-muted small mb-0">Expéditions</p>
             </div>
         </div>
     </div>
@@ -56,7 +59,7 @@
   <hr>
   <!-- Gallerie -->
   <div class="container container-fluid">
-    <div class="gallerie mt-5 mb-5">
+    <div class="gallerie mt-5 mb-5 py-3">
         <div class="row g-2">
             <div class="col-12 col-lg-4 d-flex flex-column gap-2">
                 <img src="https://placehold.co/400x280/c8c8c8/777?text=Photo+1" class="img-placeholder" style="flex:2; min-height:200px;" alt="Photo 1">
@@ -77,7 +80,7 @@
   <hr>
   <!-- Barre de recherche -->
   <div class="container container-fluid">
-    <div class="card-search mt-5">
+    <div class="card-search mt-5 py-5">
         <div class="input-group mb-3">
             <input type="text" class="form-control champs" placeholder="Rechercher">
         </div>
@@ -85,5 +88,37 @@
             <button class="btn btn-primary btn-search mx-auto mt-4">trouver une association</button>
         </div>
     </div>
+      <section class="py-5">
+      <h2 class="fw-bold mb-4 mt-5">Nos dernières actus</h2>
+
+      <div class="row g-3">
+
+        <!-- Grande carte à gauche -->
+        <div class="col-12 col-md-7">
+          <div class="card h-100 border-0 shadow-sm card-featured">
+            <img src="https://placehold.co/700x220" class="card-img-top" alt="Actu principale">
+            <div class="card-body">
+              <h5 class="card-title">{{ blogLastArticles[0].title }}</h5>
+              <p class="card-text text-muted">{{ blogLastArticles[0].content| striptags | slice(0, 112) | raw }}</p>
+              <a href="#" class="btn btn-outline-primary btn-sm">Lire la suite</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 petites cartes à droite -->
+        <div class="col-12 col-md-5 d-flex flex-column gap-3">
+          {% for article in blogLastArticles[1:] %}
+          <div class="card border-0 shadow-sm card-small">
+            <div class="d-flex">
+              <div class="card-body">
+                <h6 class="card-title">{{ article.title }}</h6>
+                <p class="card-text">{{ article.content | striptags | slice(0, 148) | raw }}</p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+    </section>
   </div>
+
+
 {% endblock %}

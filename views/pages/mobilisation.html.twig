@@ -1,3 +1,138 @@
 {% extends 'layout.html.twig' %}
 
 {% block title %}Nos Mobilisations{% endblock %}
+
+{% block content %}
+    <div class="position-relative">
+    <img src="/images/mobilisations/mobilisation.png" class="w-100 hero-img img-fluid object-fit-cover" style="height: 500px;" alt="Ukraine">
+    <div class="hero-overlay"></div>
+    <div class="position-absolute top-50 start-50 translate-middle text-white text-center">
+      <h1 class="display-3 fw-bold">Urgence Ukraine</h1>
+      <a href="#contexte" class="text-white fs-1 text-decoration-none">↓</a>
+    </div>
+  </div>
+
+  <!-- CONTEXTE HUMANITAIRE -->
+  <section>
+    <div class="container">
+      <h2 class="fw-bold mb-3">Contexte humanitaire</h2>
+      <p class="text-primary mb-4">
+        La guerre russo-ukrainienne, intensifiée en février 2022 lorsque la Russie a lancé une invasion à grande échelle de l’Ukraine, a déclenché un conflit militaire majeur, des pertes massives et une crise humanitaire en Europe. Elle s’inscrit dans un contexte de tensions géopolitiques entre la Russie, l’Occident et les aspirations de l’Ukraine à rejoindre l’Union européenne et l’OTAN.
+      </p>
+      <p class="text-primary mb-4">
+        Dès le début du conflit russo-ukrainien, PHI a fait un appel national à dons pour s’engager, grâce à la générosité de tous, de façon durable et constante dans l’aide à la population ukrainienne.
+      </p>
+    </div>
+  </section>
+
+  <!-- MATÉRIEL MÉDICAL -->
+  <section class="bg-light">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-md-6">
+          <img src="https://placehold.co/600x300/b8c8b8/777?text=Photo" class="img-fluid rounded img-block w-100" alt="">
+        </div>
+        <div class="col-12 col-md-6">
+          <h2 class="fw-bold mb-3">Achat de médicaments neufs</h2>
+          <p class="text-primary">Grâce à de nombreux donateurs, PHI a pu acheter plus de 150 000€ de médicaments en 2024, correspondant à 16 commandes</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-12 col-md-6">
+          <h2 class="fw-bold mb-3">Réhabilitation de structures de santé détruites</h2>
+          <p class="text-primary">Les associations locales PHI du Gers, Berry, Ille-et-Vilaine, Vaucluse et Anjou ont mutualisé leurs ressources pour regrouper du matériel médical à Angers avec le départ d’un camion transportant 80 lits médicalisés, 86 matelas, des draps et vêtements d'hôpitaux.</p>
+        </div>
+        <div class="col-12 col-md-6">
+          <img src="https://placehold.co/600x300/c8d8c8/777?text=Photo" class="img-fluid rounded img-block w-100" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EN 2025 -->
+  <section class="bg-light">
+    <div class="container">
+      <h2 class="fw-bold text-center">En 2025</h2>
+      <div class="row g-4 justify-content-center">
+        <div class="col-12 col-sm-4">
+          <div class="card border-0 shadow-sm text-center">
+            <div class="card-body">
+              <p class="display-5 fw-bold text-success mb-1">360 t</p>
+              <p class="text-secondary mb-0">de matériel envoyé</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-4">
+          <div class="card border-0 shadow-sm text-center py-4">
+            <div class="card-body">
+              <p class="display-5 fw-bold text-success mb-1">6</p>
+              <p class="text-secondary mb-0">groupes électrogènes offerts</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-4">
+          <div class="card border-0 shadow-sm text-center py-4">
+            <div class="card-body">
+              <p class="display-5 fw-bold text-success mb-1">1</p>
+              <p class="text-secondary mb-0">ambulance offerte</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACCORDION -->
+  <section class="py-5">
+    <div class="container">
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
+          <h2 class="accordion-header">
+            <button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+              Comment faire un don ?
+            </button>
+          </h2>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+            <div class="accordion-body text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum dicta amet debitis officia.</div>
+          </div>
+        </div>
+        <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+              Comment devenir bénévole ?
+            </button>
+          </h2>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum dicta amet debitis officia.</div>
+          </div>
+        </div>
+        <div class="accordion-item border-0 rounded-3 overflow-hidden shadow-sm">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+              Où va mon don ?
+            </button>
+          </h2>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum dicta amet debitis officia.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOUTONS DON / BÉNÉVOLE -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="d-flex justify-content-center gap-3 flex-wrap">
+        <a href="#" class="btn btn-success btn-lg rounded-pill px-5">Don</a>
+        <a href="#" class="btn btn-outline-success btn-lg rounded-pill px-5">Bénévole</a>
+      </div>
+    </div>
+  </section>
+
+
+{% endblock %}

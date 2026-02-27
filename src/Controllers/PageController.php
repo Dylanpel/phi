@@ -3,13 +3,14 @@
 namespace App\Controllers;
 
 use App\Core\Abstract\Controller;
-use App\Core\Auth;
 use App\Core\Router;
+use App\Model\Managers\ArticleManager;
 use App\Model\Managers\PageManager;
 
 class PageController extends Controller
 {
   private PageManager $pageManager;
+  private ArticleManager $articleManager;
 
   public function __construct()
   {
@@ -17,6 +18,7 @@ class PageController extends Controller
 
     //on instancie les managers directement à l'instantiation
     $this->pageManager = new PageManager();
+    $this->articleManager = new ArticleManager();
   }
 
   /**
@@ -27,7 +29,8 @@ class PageController extends Controller
   {
     $this->render('pages/home', [
       //spécifier en dûr id de la page en base
-      'page' => $this->pageManager->findById(1)
+      'page' => $this->pageManager->findById(1),
+      'blogLastArticles' => $this->articleManager->findAll('date','DESC', 5)
     ]);
   }
 
