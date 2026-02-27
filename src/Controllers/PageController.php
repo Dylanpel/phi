@@ -59,13 +59,11 @@ class PageController extends Controller
 
     //récupération des infos envoyées par le formulaire
     $title = trim($_POST['title'] ?? '');
-    // $slug = trim($_POST['slug'] ?? '');
     $content = trim($_POST['content'] ?? '');
     $imageUrl = trim($_POST['image_url'] ?? '');
 
     $data = [
       'title' => $title,
-      // 'slug' => $slug,
       'content' => $content,
     ];
     
@@ -107,14 +105,12 @@ class PageController extends Controller
     
     //récupération des infos envoyées par le formulaire
     $title = trim($_POST['title'] ?? '');
-    // $slug = trim($_POST['slug'] ?? '');
     $content = trim($_POST['content'] ?? '');
     $imageUrl = trim($_POST['image_url'] ?? '');
 
     //création object contenant les données à mettre à jour
     $data = [
       'title' => $title,
-      // 'slug' => $slug,
       'content' => $content,
       'image_url' => $imageUrl,
     ];
